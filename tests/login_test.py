@@ -14,7 +14,6 @@ def login(request):  # deixou de receber a request para receber diretamente a fu
     # anteriormente apontavamos o Chrome Driver diretamente
     # _chromedriver = 'vendor/chromedriver.exe'
     _chromedriver = os.path.join(os.getcwd(), 'vendor', 'chromedriver.exe')
-    print('O CWD ENCONTRADO É:' + _chromedriver)
 
     #return login_page.LoginPage(driver)  # instanciando a classe LoginPage e passando a função
     # driver, que é o nosso Selenium turbinado
@@ -32,6 +31,8 @@ def login(request):  # deixou de receber a request para receber diretamente a fu
     # funcao finalizacao do teste esta contida na funcao de inicializacao (login)
     def quit():
         driver_.quit()
+    print('O CRHOMEDRIVER ENCONTRADO É:' + _chromedriver)
+    #print('O DRIVER É:' + driver_)
 
     # chamar o quit ( a finalizacao)
     request.addfinalizer(quit)
